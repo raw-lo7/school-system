@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة واجب | النظام المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="special-homework-container">
+        <h2>إضافة واجب</h2>
+        <form id="special-homework-form">
+            <label>عنوان الواجب:
+                <input type="text" id="homework-title" required>
+            </label>
+            <label>الوصف:
+                <textarea id="homework-desc" rows="4" required></textarea>
+            </label>
+            <label>المادة:
+                <input type="text" id="homework-subject" required>
+            </label>
+            <label>تاريخ التسليم:
+                <input type="date" id="homework-date" required>
+            </label>
+            <label>تحميل ملف الواجب (اختياري):
+                <input type="file" id="homework-file" accept=".pdf,.doc,.docx,.jpg,.png,.jpeg">
+            </label>
+            <label>رابط خارجي (اختياري):
+                <input type="url" id="homework-link" placeholder="https://example.com">
+            </label>
+            <button type="submit">إضافة الواجب</button>
+        </form>
+        <div id="special-homework-list">
+            <h3>الواجبات</h3>
+            <ul id="homework-list-ul"></ul>
+        </div>
+    </div>
+    <script src="special_homework.js"></script>
+</body>
+</html>

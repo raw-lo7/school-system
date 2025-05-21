@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إعدادات الموقع | النظام المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .settings-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            max-width: 500px;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+        }
+        .settings-card h2 {
+            color: #f57c00;
+            margin-bottom: 1.2rem;
+        }
+        .settings-card label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: bold;
+        }
+        .settings-card input, .settings-card select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            margin-bottom: 0.7rem;
+            font-size: 1rem;
+        }
+        .settings-card button {
+            background: #f57c00;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0.7rem 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-card">
+        <h2>إعدادات الموقع</h2>
+        <form id="site-settings-form">
+            <label>اسم الموقع</label>
+            <input type="text" id="site-name-input" value="النظام المدرسي" required>
+            <label>اللغة الافتراضية</label>
+            <select id="site-lang">
+                <option value="ar">العربية</option>
+                <option value="en">English</option>
+            </select>
+            <label>الوضع الليلي</label>
+            <select id="site-theme">
+                <option value="light">نهاري</option>
+                <option value="dark">ليلي</option>
+            </select>
+            <button type="submit">حفظ الإعدادات</button>
+        </form>
+        <div id="settings-success" style="color:#43a047;margin-top:1rem;"></div>
+    </div>
+    <script src="site_settings.js"></script>
+</body>
+</html>

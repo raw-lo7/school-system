@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الدرجات | النظام المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grades-container">
+        <h2>إدارة الدرجات</h2>
+        <form id="grades-form">
+            <label>اسم الطالب:
+                <select id="grades-student" required></select>
+            </label>
+            <label>المادة:
+                <input type="text" id="grades-subject" required>
+            </label>
+            <label>الدرجة:
+                <input type="number" id="grades-value" min="0" max="100" required>
+            </label>
+            <label>سبب الدرجة:
+                <input type="text" id="grades-reason" placeholder="سبب منح الدرجة..." required>
+            </label>
+            <button type="submit">إضافة/تحديث الدرجة</button>
+        </form>
+        <div id="grades-search-container" style="margin-bottom:1.5rem;text-align:center;">
+            <input type="text" id="grades-search" placeholder="ابحث عن اسم الطالب..." style="width:60%;padding:0.7rem 1rem;border-radius:8px;border:1px solid #ddd;font-size:1.1rem;">
+        </div>
+        <div id="grades-list">
+            <h3>سجل الدرجات</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>اسم الطالب</th>
+                        <th>المادة</th>
+                        <th>الدرجة</th>
+                        <th>السبب</th>
+                        <th>حذف</th>
+                    </tr>
+                </thead>
+                <tbody id="grades-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="grades.js"></script>
+</body>
+</html>

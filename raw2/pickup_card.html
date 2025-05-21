@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطاقة استلام طفل من الحضانة</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .print-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            max-width: 600px;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+        }
+        .print-card h2 {
+            color: #f57c00;
+            margin-bottom: 1.2rem;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.2rem;
+        }
+        .info-table td {
+            padding: 0.5rem 0.7rem;
+            border-bottom: 1px solid #eee;
+        }
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+        .sign-box {
+            width: 45%;
+            border-top: 1px solid #aaa;
+            text-align: center;
+            padding-top: 0.5rem;
+        }
+        .notes {
+            margin-top: 1rem;
+        }
+        @media print {
+            body * { visibility: hidden; }
+            .print-card, .print-card * { visibility: visible; }
+            .print-card { box-shadow: none; margin: 0; }
+            .print-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="print-card">
+        <h2>بطاقة استلام طفل من الحضانة</h2>
+        <div><strong>اسم الحضانة:</strong> <span id="nursery-name">روضة المستقبل</span></div>
+        <div><strong>العنوان:</strong> <span id="nursery-address">شارع النور، المدينة</span></div>
+        <div><strong>رقم الهاتف:</strong> <span id="nursery-phone">01000000000</span></div>
+        <hr>
+        <table class="info-table">
+            <tr><td><strong>اسم الطفل الكامل:</strong></td><td><input type="text" id="child-name"></td></tr>
+            <tr><td><strong>تاريخ الميلاد:</strong></td><td><input type="date" id="child-birth"></td></tr>
+            <tr><td><strong>الصف:</strong></td><td><input type="text" id="child-class"></td></tr>
+            <tr><td><strong>اسم ولي الأمر:</strong></td><td><input type="text" id="parent-name"></td></tr>
+            <tr><td><strong>العلاقة بالطفل:</strong></td><td><input type="text" id="parent-relation"></td></tr>
+            <tr><td><strong>رقم هوية ولي الأمر:</strong></td><td><input type="text" id="parent-id"></td></tr>
+            <tr><td><strong>رقم هاتف ولي الأمر:</strong></td><td><input type="text" id="parent-phone"></td></tr>
+            <tr><td><strong>تاريخ الاستلام:</strong></td><td><input type="date" id="pickup-date"></td></tr>
+            <tr><td><strong>وقت الاستلام:</strong></td><td><input type="time" id="pickup-time"></td></tr>
+        </table>
+        <div class="signatures">
+            <div class="sign-box">توقيع المستلم</div>
+            <div class="sign-box">توقيع المشرفة</div>
+        </div>
+        <div class="notes">
+            <strong>ملاحظات:</strong><br>
+            <textarea id="notes" rows="2" style="width:100%;border-radius:7px;"></textarea>
+        </div>
+        <button class="print-btn" onclick="window.print()" style="margin-top:1.5rem;background:#f57c00;color:#fff;padding:0.7rem 2rem;border:none;border-radius:7px;font-size:1.1rem;cursor:pointer;">طباعة البطاقة</button>
+    </div>
+</body>
+</html>

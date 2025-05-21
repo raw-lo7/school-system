@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة المدرس | النظام المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="site-title">النظام المدرسي</h1>
+        <nav>
+            <div class="nav-cards">
+                <a class="nav-card" href="home.html">الرئيسية</a>
+                <a class="nav-card" href="contact.html">اتصل بنا</a>
+                <a class="nav-card" href="profile.html">ملفي الشخصي</a>
+                <button class="nav-card logout-card" onclick="logout()">تسجيل الخروج</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="teacher-cards">
+            <a class="teacher-card" href="teacher_attendance.html">الحضور والغياب</a>
+            <a class="teacher-card" href="special_homework.html">الواجبات</a>
+            <a class="teacher-card" href="grades.html">الدرجات</a>
+        </div>
+        <div class="teacher-cards">
+            <a class="teacher-card" href="#messages">صندوق الرسائل</a>
+        </div>
+        <section id="messages">
+            <h2>صندوق الرسائل</h2>
+            <table id="msg-table" style="width:100%;margin-bottom:2rem;">
+                <thead><tr><th>من</th><th>العنوان</th><th>المحتوى</th><th>التاريخ</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+    <script src="teacher.js"></script>
+</body>
+</html>

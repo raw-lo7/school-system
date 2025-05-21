@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سجل الطالب | النظام المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .student-record-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            max-width: 700px;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+        }
+        .student-record-card h2 {
+            color: #f57c00;
+            margin-bottom: 1.2rem;
+        }
+        .record-section {
+            margin-bottom: 1.5rem;
+        }
+        .record-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.5rem;
+        }
+        .record-section th, .record-section td {
+            border: 1px solid #eee;
+            padding: 0.5rem 0.7rem;
+            text-align: center;
+        }
+        .record-section th {
+            background: #f6d365;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="student-record-card">
+        <h2>سجل الطالب</h2>
+        <div class="record-section">
+            <h3>سجل الحضور والغياب</h3>
+            <table id="attendance-record">
+                <thead><tr><th>التاريخ</th><th>الحالة</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="record-section">
+            <h3>سجل الدرجات</h3>
+            <table id="grades-record">
+                <thead><tr><th>المادة</th><th>الدرجة</th><th>تاريخ التقييم</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="record-section">
+            <h3>سجل الدفعات</h3>
+            <table id="payments-record">
+                <thead><tr><th>التاريخ</th><th>المبلغ</th><th>الحالة</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="student_record.js"></script>
+</body>
+</html>

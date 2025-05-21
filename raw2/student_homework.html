@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>واجباتي | النظام المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="student-cards student-cards-center">
+                <a class="student-card" href="student_homework.html">واجباتي</a>
+                <a class="student-card" href="student_absences.html">عدد مرات الغياب</a>
+                <a class="student-card" href="profile.html">ملفي الشخصي</a>
+                <button onclick="logout()" class="student-card logout-card" style="background:#eee;color:#d32f2f;min-width:120px;">تسجيل الخروج</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2 style="text-align:center;color:#f57c00;margin-bottom:2rem;">واجباتي</h2>
+            <div class="student-table-container">
+                <table id="student-homework-table">
+                    <thead>
+                        <tr><th>العنوان</th><th>تاريخ النشر</th><th>تاريخ الانتهاء</th><th>رابط/ملف</th><th>الحالة</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="student.js"></script>
+    <style>
+    .student-cards {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    .student-cards-center {
+        justify-content: center;
+        margin: 2rem 0 0 0;
+    }
+    .student-card {
+        background: #fff;
+        color: #f57c00;
+        border-radius: 20px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        padding: 2.2rem 2.5rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+        min-width: 180px;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+        border: none;
+        cursor: pointer;
+    }
+    .student-card:hover {
+        background: #f57c00;
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(245,124,0,0.13);
+    }
+    .logout-card {
+        color: #d32f2f !important;
+        background: #eee !important;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    }
+    .logout-card:hover {
+        background: #d32f2f !important;
+        color: #fff !important;
+    }
+    .student-table-container {
+        display: flex;
+        justify-content: center;
+    }
+    #student-homework-table {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        width: 90%;
+        max-width: 900px;
+        margin: 0 auto 2rem auto;
+        border-collapse: separate;
+        border-spacing: 0;
+        overflow: hidden;
+    }
+    #student-homework-table th, #student-homework-table td {
+        padding: 1rem 1.2rem;
+        text-align: center;
+    }
+    #student-homework-table th {
+        background: #f57c00;
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    #student-homework-table tr:nth-child(even) {
+        background: #f9f9f9;
+    }
+    #student-homework-table tr:nth-child(odd) {
+        background: #fff;
+    }
+    </style>
+</body>
+</html>

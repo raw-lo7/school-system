@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شهادة الطالب (تقرير الفصل/السنة) | النظام المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="report-container">
+        <div class="select-student-row" style="margin-bottom:2rem;text-align:center;">
+            <label>اختر الطالب:
+                <select id="student-select"></select>
+            </label>
+        </div>
+        <div id="report-content"></div>
+        <button class="print-btn" onclick="window.print()">طباعة الشهادة</button>
+    </div>
+    <script src="report_card.js"></script>
+</body>
+</html>

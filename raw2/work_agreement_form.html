@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استمارة اتفاق عمل للموظفين</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .work-agreement-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            max-width: 700px;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+        }
+        .work-agreement-card h2 {
+            color: #f57c00;
+            margin-bottom: 1.2rem;
+        }
+        .agreement-section {
+            margin-bottom: 1.2rem;
+        }
+        .agreement-section label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: bold;
+        }
+        .agreement-section input, .agreement-section textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            margin-bottom: 0.7rem;
+            font-size: 1rem;
+        }
+        .agreement-section textarea {
+            resize: vertical;
+        }
+        .agreement-details {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #eee;
+        }
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+        .sign-box {
+            width: 45%;
+            border-top: 1px solid #aaa;
+            text-align: center;
+            padding-top: 0.5rem;
+        }
+        @media print {
+            body * { visibility: hidden; }
+            .work-agreement-card, .work-agreement-card * { visibility: visible; }
+            .work-agreement-card { box-shadow: none; margin: 0; }
+            .print-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="work-agreement-card">
+        <h2>استمارة اتفاق عمل للموظفين</h2>
+        <div class="agreement-details">
+            في تاريخ اليوم <input type="text" style="width:120px;display:inline-block;" placeholder="__/__/____"> تم الاتفاق بين:<br>
+            الطرف الأول: <input type="text" style="width:180px;display:inline-block;" placeholder="اسم الإدارة"> ويمثل إدارة الحضانة<br>
+            الطرف الثاني: <input type="text" style="width:180px;display:inline-block;" placeholder="اسم الموظف"> رقم الهوية <input type="text" style="width:180px;display:inline-block;" placeholder="رقم الهوية"><br>
+            الوظيفة <input type="text" style="width:120px;display:inline-block;" placeholder="الوظيفة">
+        </div>
+        <div class="agreement-details">
+            <strong>1. مدة العقد:</strong><br>
+            يبدأ من <input type="text" style="width:120px;display:inline-block;" placeholder="__/__/____"> ويستمر حتى <input type="text" style="width:120px;display:inline-block;" placeholder="__/__/____">
+        </div>
+        <div class="agreement-details">
+            <strong>2. طبيعة العمل:</strong><br>
+            العمل ك<input type="text" style="width:120px;display:inline-block;" placeholder="المسمى الوظيفي"> مع الالتزام بتدريس الأطفال والإشراف على الأنشطة وتنفيذ البرامج التعليمية
+        </div>
+        <div class="agreement-details">
+            <strong>3. الراتب:</strong><br>
+            <input type="text" style="width:100px;display:inline-block;" placeholder="المبلغ"> جنيه شهرياً يُدفع في نهاية كل شهر ويشمل المستحقات<br>
+            ساعات العمل: <input type="text" style="width:60px;display:inline-block;" placeholder="عدد الساعات"> يومياً من <input type="text" style="width:80px;display:inline-block;" placeholder="بداية الدوام"> إلى <input type="text" style="width:80px;display:inline-block;" placeholder="نهاية الدوام"> مع استراحة <input type="text" style="width:60px;display:inline-block;" placeholder="مدة الاستراحة">
+        </div>
+        <div class="agreement-details">
+            <strong>5. الإجازات:</strong><br>
+            يحق للمدرس/ة الحصول على <input type="text" style="width:60px;display:inline-block;" placeholder="عدد الأيام"> يوم إجازة سنوياً بموافقة الإدارة
+        </div>
+        <div class="agreement-details">
+            <strong>6. إنهاء العقد:</strong><br>
+            يتم الإنهاء بإشعار قبل <input type="text" style="width:60px;display:inline-block;" placeholder="عدد الأيام"> أو فوراً في حال مخالفة شروط العقد
+        </div>
+        <div class="agreement-details">
+            <strong>7. السرية:</strong><br>
+            يلتزم المدرس/ة بعدم إفشاء أي معلومات تخص الأطفال أو الحضانة
+        </div>
+        <div class="agreement-details">
+            <strong>8. التأمين المسترد:</strong><br>
+            يُخصم 25% من الراتب لمدة 4 شهور كتأمين مسترد عند ترك العمل بشرط الإخطار قبل 30 يوم وألا توجد أضرار أو التزامات<br>
+            تلتزم إدارة الحضانة بزيادة راتب الموظف بنسبة 10%
+        </div>
+        <div class="signatures">
+            <div class="sign-box">توقيع الطرف الأول</div>
+            <div class="sign-box">توقيع الطرف الثاني</div>
+        </div>
+        <button class="print-btn" onclick="window.print()" style="margin-top:1.5rem;background:#f57c00;color:#fff;padding:0.7rem 2rem;border:none;border-radius:7px;font-size:1.1rem;cursor:pointer;">طباعة الاتفاق</button>
+    </div>
+</body>
+</html>

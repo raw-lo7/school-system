@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استمارة تقديم طفل في الحضانة</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            max-width: 700px;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+        }
+        .form-card h2 {
+            color: #f57c00;
+            margin-bottom: 1.2rem;
+        }
+        .form-section {
+            margin-bottom: 1.2rem;
+        }
+        .form-section label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: bold;
+        }
+        .form-section input, .form-section textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            margin-bottom: 0.7rem;
+            font-size: 1rem;
+        }
+        .form-section textarea {
+            resize: vertical;
+        }
+        .agreement {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #eee;
+        }
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+        .sign-box {
+            width: 45%;
+            border-top: 1px solid #aaa;
+            text-align: center;
+            padding-top: 0.5rem;
+        }
+        @media print {
+            body * { visibility: hidden; }
+            .form-card, .form-card * { visibility: visible; }
+            .form-card { box-shadow: none; margin: 0; }
+            .print-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-card">
+        <h2>استمارة تقديم طفل في الحضانة</h2>
+        <div class="agreement">
+            تم هذا الاتفاق في يوم <input type="text" style="width:120px;display:inline-block;" placeholder="__/__/____"> بين:<br>
+            الطرف الأول: إدارة حضانة <input type="text" style="width:180px;display:inline-block;" placeholder="اسم الحضانة">، العنوان <input type="text" style="width:180px;display:inline-block;" placeholder="العنوان"><br>
+            الطرف الثاني: السيد/السيدة <input type="text" style="width:180px;display:inline-block;" placeholder="اسم ولي الأمر"> ولي أمر الطفل
+        </div>
+        <div class="form-section">
+            <label>اسم الطفل</label>
+            <input type="text" placeholder="اسم الطفل">
+            <label>تاريخ الميلاد</label>
+            <input type="date">
+            <label>الحالة الصحية</label>
+            <textarea rows="2" placeholder="الحالة الصحية"></textarea>
+        </div>
+        <div class="agreement">
+            المادة 2: مدة التعاقد<br>
+            تبدأ مدة الاشتراك من <input type="text" style="width:120px;display:inline-block;" placeholder="__/__/____"> وتجدد تلقائياً شهرياً ما لم يُخطر أحد الطرفين الآخر بعدم التجديد.
+        </div>
+        <div class="agreement">
+            المادة 3: المصروفات<br>
+            المصروف الشهري المتفق عليه هو <input type="text" style="width:100px;display:inline-block;" placeholder="المبلغ"> جنيه.<br>
+            تدفع المصروفات خلال أول 10 أيام من كل شهر. وفي حالة التأخير عن الدفع بعد اليوم العاشر، تطبق غرامة تأخير قدرها <input type="text" style="width:80px;display:inline-block;" placeholder="المبلغ"> عن كل أسبوع تأخير.
+        </div>
+        <div class="agreement">
+            المادة 4: التزامات الحضانة<br>
+            <ul>
+                <li>توفير بيئة آمنة وتعليمية مناسبة.</li>
+                <li>رعاية الطفل وتعليمه طبقاً للبرنامج المعتمد.</li>
+            </ul>
+        </div>
+        <div class="agreement">
+            المادة 5: التزامات ولي الأمر<br>
+            <ul>
+                <li>الالتزام بالحضور والانصراف في المواعيد المحددة.</li>
+                <li>إبلاغ الحضانة بأي مشاكل صحية أو سلوكية خاصة بالطفل.</li>
+                <li>احترام نظام الحضانة وتعليماتها.</li>
+            </ul>
+        </div>
+        <div class="agreement">
+            المادة 6: إنهاء التعاقد<br>
+            يحق لأي طرف إنهاء التعاقد بإشعار كتابي قبل 7 أيام على الأقل. في حال الإخلال بأي شرط، يحق للطرف الآخر فسخ العقد فوراً.
+        </div>
+        <div class="agreement">
+            المادة 7: بند الغياب<br>
+            في حال غياب الطفل لأي سبب، فإن الحضانة غير مسؤولة عن تعويض الأيام الغائبة ولا تخصم من المصروف الشهري.
+        </div>
+        <div class="signatures">
+            <div class="sign-box">توقيع الطرف الأول (الحضانة)</div>
+            <div class="sign-box">توقيع الطرف الثاني (ولي الأمر)</div>
+        </div>
+        <div style="margin-top:1.2rem;">
+            التاريخ: <input type="text" style="width:120px;display:inline-block;" placeholder="__/__/____">
+        </div>
+        <button class="print-btn" onclick="window.print()" style="margin-top:1.5rem;background:#f57c00;color:#fff;padding:0.7rem 2rem;border:none;border-radius:7px;font-size:1.1rem;cursor:pointer;">طباعة الاستمارة</button>
+    </div>
+</body>
+</html>

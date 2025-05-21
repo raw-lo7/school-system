@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملفي الشخصي | النظام المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .profile-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            max-width: 420px;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .profile-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #f57c00;
+            margin-bottom: 1rem;
+        }
+        .profile-card input[type="file"] {
+            margin-bottom: 1rem;
+        }
+        .profile-card label {
+            display: block;
+            margin: 0.7rem 0 0.2rem 0;
+            text-align: right;
+            color: #333;
+        }
+        .profile-card input[type="text"],
+        .profile-card input[type="password"] {
+            width: 100%;
+            padding: 0.6rem;
+            margin-bottom: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .profile-card button {
+            background: #f57c00;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0.7rem 2rem;
+            margin-top: 1rem;
+        }
+        nav {
+            text-align: center;
+            margin: 1rem 0;
+        }
+        nav a {
+            margin-right: 1rem;
+            text-decoration: none;
+            color: #f57c00;
+        }
+        nav button {
+            background: #f57c00;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="home.html" style="margin-left:1rem;">الرئيسية</a>
+        <a href="contact.html" style="margin-left:1rem;">اتصل بنا</a>
+        <button onclick="logout()">تسجيل الخروج</button>
+        <a href="profile.html" style="margin-right:1rem;">ملفي الشخصي</a>
+    </nav>
+    <div class="profile-card">
+        <img id="profile-avatar" class="profile-avatar" src="https://ui-avatars.com/api/?name=User" alt="avatar">
+        <form id="avatar-form">
+            <input type="file" id="avatar-input" accept="image/*">
+        </form>
+        <div id="profile-info"></div>
+        <form id="password-form" style="margin-top:1.5rem;">
+            <label style="font-weight:bold;display:block;text-align:center;margin-bottom:0.7rem;color:#f57c00;">تغيير كلمة المرور</label>
+            <input type="password" id="old-password" placeholder="كلمة المرور الحالية">
+            <input type="password" id="new-password" placeholder="كلمة المرور الجديدة">
+            <button type="submit">تغيير</button>
+        </form>
+        <div id="password-success" style="display:none;color:#43a047;font-weight:bold;margin-top:1rem;"></div>
+        <div id="password-error" style="display:none;color:#d32f2f;font-weight:bold;margin-top:1rem;"></div>
+    </div>
+    <script src="profile.js"></script>
+    <script>
+    // إخفاء نموذج تغيير كلمة المرور إذا كان المستخدم طالبًا
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    if(user.role === 'student') {
+        document.getElementById('password-form').style.display = 'none';
+    } else {
+        document.getElementById('password-form').style.display = '';
+    }
+    </script>
+</body>
+</html>

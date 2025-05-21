@@ -1,0 +1,936 @@
+body {
+    font-family: 'Cairo', Arial, sans-serif;
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-container {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    width: 340px;
+    text-align: center;
+}
+.login-container h2 {
+    margin-bottom: 1.5rem;
+    color: #f57c00;
+    font-weight: bold;
+}
+.login-container label {
+    display: block;
+    margin: 0.7rem 0 0.2rem 0;
+    text-align: right;
+    color: #333;
+}
+.login-container input, .login-container select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+.login-container button[type="submit"] {
+    width: 100%;
+    padding: 0.7rem;
+    background: #f57c00;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.login-container button[type="submit"]:hover {
+    background: #ff9800;
+}
+.lang-switch {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.lang-switch button {
+    background: #eee;
+    border: none;
+    padding: 0.4rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #444;
+    transition: background 0.2s;
+}
+.lang-switch button:hover {
+    background: #f57c00;
+    color: #fff;
+}
+.error {
+    color: #d32f2f;
+    margin-top: 0.7rem;
+    font-size: 0.98rem;
+    min-height: 1.2em;
+}
+
+/* بحث سريع في الجداول */
+.table-search {
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 1rem;
+    display: block;
+}
+
+/* الوضع الليلي */
+body.dark-mode {
+    background: #23272f;
+    color: #eee;
+}
+body.dark-mode .login-container,
+body.dark-mode .form-card,
+body.dark-mode .print-card,
+body.dark-mode .work-agreement-card,
+body.dark-mode .about,
+body.dark-mode .home-hero {
+    background: #2d313a !important;
+    color: #eee !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background: #23272f;
+    color: #fff;
+    border: 1px solid #444;
+}
+body.dark-mode table {
+    background: #23272f;
+    color: #fff;
+}
+body.dark-mode th, body.dark-mode td {
+    border-color: #444;
+}
+body.dark-mode .quick-link {
+    background: #23272f;
+    color: #f57c00;
+}
+body.dark-mode .quick-link:hover {
+    background: #f57c00;
+    color: #fff;
+}
+body.dark-mode .about {
+    background: #23272f;
+    color: #eee;
+}
+
+/* صورة رمزية */
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f57c00;
+    margin-left: 0.7rem;
+    vertical-align: middle;
+}
+
+/* زر الوضع الليلي */
+.night-btn {
+    background: #23272f;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 0.4rem 1.2rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.night-btn:hover {
+    background: #f57c00;
+    color: #fff;
+}
+
+/* تنسيقات مربعات الإدارة */
+.admin-cards {
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    border-radius: 24px;
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 700px;
+    margin: 3rem auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.admin-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    color: #f57c00;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 1.2rem 2.2rem;
+    margin: 0.5rem;
+    min-width: 160px;
+    text-align: center;
+    transition: background 0.18s, color 0.18s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.admin-card:hover {
+    background: #f57c00;
+    color: #fff;
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(245,124,0,0.13);
+}
+
+body.dark-mode .admin-cards {
+    background: rgba(35, 39, 47, 0.55);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+body.dark-mode .admin-card {
+    background: #23272f;
+    color: #ffb74d;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+body.dark-mode .admin-card:hover {
+    background: #ffb74d;
+    color: #23272f;
+}
+
+/* تنسيقات خاصة لمربع تسجيل الخروج */
+.logout-card {
+    background: #fff0ee;
+    color: #d32f2f;
+    border: 2px solid #ffd6d6;
+}
+.logout-card:hover {
+    background: #d32f2f;
+    color: #fff;
+    border-color: #d32f2f;
+}
+body.dark-mode .logout-card {
+    background: #3a2323;
+    color: #ffb4b4;
+    border-color: #5a2a2a;
+}
+body.dark-mode .logout-card:hover {
+    background: #ffb4b4;
+    color: #3a2323;
+    border-color: #d32f2f;
+}
+
+/* تنسيقات صفحة الواجبات المميزة */
+.special-homework-container {
+    background: rgba(255,255,255,0.35);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    border-radius: 24px;
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 500px;
+    margin: 3rem auto 0 auto;
+    text-align: center;
+}
+.special-homework-container h2 {
+    color: #f57c00;
+    margin-bottom: 1.2rem;
+}
+#special-homework-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+#special-homework-form label {
+    text-align: right;
+    color: #333;
+    font-weight: bold;
+}
+#special-homework-form input,
+#special-homework-form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-top: 0.3rem;
+}
+#special-homework-form button[type="submit"] {
+    background: #f57c00;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.7rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#special-homework-form button[type="submit"]:hover {
+    background: #ff9800;
+}
+#special-homework-list {
+    margin-top: 2rem;
+    text-align: right;
+}
+#special-homework-list h3 {
+    color: #f57c00;
+    margin-bottom: 1rem;
+}
+#homework-list-ul {
+    list-style: none;
+    padding: 0;
+}
+#homework-list-ul li {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-bottom: 1rem;
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    position: relative;
+}
+#homework-list-ul .delete-btn {
+    background: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    transition: background 0.2s;
+}
+#homework-list-ul .delete-btn:hover {
+    background: #b71c1c;
+}
+body.dark-mode .special-homework-container {
+    background: rgba(35, 39, 47, 0.55);
+    color: #eee;
+}
+body.dark-mode #homework-list-ul li {
+    background: #23272f;
+    color: #ffb74d;
+}
+body.dark-mode #special-homework-form input,
+body.dark-mode #special-homework-form textarea {
+    background: #23272f;
+    color: #fff;
+    border: 1px solid #444;
+}
+body.dark-mode #homework-list-ul .delete-btn {
+    background: #b71c1c;
+    color: #fff;
+}
+body.dark-mode #homework-list-ul .delete-btn:hover {
+    background: #d32f2f;
+}
+
+/* تنسيقات صفحة الحضور والغياب */
+.attendance-container {
+    background: rgba(255,255,255,0.35);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    border-radius: 24px;
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 600px;
+    margin: 3rem auto 0 auto;
+    text-align: center;
+}
+.attendance-container h2 {
+    color: #f57c00;
+    margin-bottom: 1.2rem;
+}
+#attendance-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+#attendance-form label {
+    text-align: right;
+    color: #333;
+    font-weight: bold;
+}
+#attendance-form input,
+#attendance-form select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-top: 0.3rem;
+}
+#attendance-form button[type="submit"] {
+    background: #f57c00;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.7rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#attendance-form button[type="submit"]:hover {
+    background: #ff9800;
+}
+#attendance-list {
+    margin-top: 2rem;
+    text-align: right;
+}
+#attendance-list h3 {
+    color: #f57c00;
+    margin-bottom: 1rem;
+}
+#attendance-list table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    overflow: hidden;
+}
+#attendance-list th, #attendance-list td {
+    padding: 0.8rem 0.5rem;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+#attendance-list th {
+    background: #ffe0b2;
+    color: #f57c00;
+    font-weight: bold;
+}
+#attendance-list .delete-btn {
+    background: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#attendance-list .delete-btn:hover {
+    background: #b71c1c;
+}
+body.dark-mode .attendance-container {
+    background: rgba(35, 39, 47, 0.55);
+    color: #eee;
+}
+body.dark-mode #attendance-list table {
+    background: #23272f;
+    color: #ffb74d;
+}
+body.dark-mode #attendance-form input,
+body.dark-mode #attendance-form select {
+    background: #23272f;
+    color: #fff;
+    border: 1px solid #444;
+}
+body.dark-mode #attendance-list th {
+    background: #23272f;
+    color: #ffb74d;
+}
+body.dark-mode #attendance-list .delete-btn {
+    background: #b71c1c;
+    color: #fff;
+}
+body.dark-mode #attendance-list .delete-btn:hover {
+    background: #d32f2f;
+}
+.student-att-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    margin-bottom: 1rem;
+    padding: 0.7rem 1.2rem;
+    font-size: 1.08rem;
+}
+.student-att-row .student-name {
+    min-width: 120px;
+    font-weight: bold;
+    color: #f57c00;
+}
+.student-att-row label {
+    font-weight: normal;
+    color: #333;
+    margin-left: 1.2rem;
+}
+body.dark-mode .student-att-row {
+    background: #23272f;
+    color: #ffb74d;
+}
+body.dark-mode .student-att-row .student-name {
+    color: #ffb74d;
+}
+body.dark-mode .student-att-row label {
+    color: #eee;
+}
+
+/* تنسيقات صفحة إضافة حسابات المستخدمين */
+.user-accounts-container {
+    background: rgba(255,255,255,0.35);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    border-radius: 24px;
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 600px;
+    margin: 3rem auto 0 auto;
+    text-align: center;
+}
+.user-accounts-container h2 {
+    color: #f57c00;
+    margin-bottom: 1.2rem;
+}
+#user-account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+#user-account-form label {
+    text-align: right;
+    color: #333;
+    font-weight: bold;
+}
+#user-account-form input,
+#user-account-form select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-top: 0.3rem;
+}
+#user-account-form button[type="submit"] {
+    background: #f57c00;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.7rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#user-account-form button[type="submit"]:hover {
+    background: #ff9800;
+}
+#user-accounts-list {
+    margin-top: 2rem;
+    text-align: right;
+}
+#user-accounts-list h3 {
+    color: #f57c00;
+    margin-bottom: 1rem;
+}
+#user-accounts-list table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    overflow: hidden;
+}
+#user-accounts-list th, #user-accounts-list td {
+    padding: 0.8rem 0.5rem;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+#user-accounts-list th {
+    background: #ffe0b2;
+    color: #f57c00;
+    font-weight: bold;
+}
+#user-accounts-list .delete-btn {
+    background: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#user-accounts-list .delete-btn:hover {
+    background: #b71c1c;
+}
+body.dark-mode .user-accounts-container {
+    background: rgba(35, 39, 47, 0.55);
+    color: #eee;
+}
+body.dark-mode #user-accounts-list table {
+    background: #23272f;
+    color: #ffb74d;
+}
+body.dark-mode #user-account-form input,
+body.dark-mode #user-account-form select {
+    background: #23272f;
+    color: #fff;
+    border: 1px solid #444;
+}
+body.dark-mode #user-accounts-list th {
+    background: #23272f;
+    color: #ffb74d;
+}
+body.dark-mode #user-accounts-list .delete-btn {
+    background: #b71c1c;
+    color: #fff;
+}
+body.dark-mode #user-accounts-list .delete-btn:hover {
+    background: #d32f2f;
+}
+
+/* حضور وغياب للمعلم */
+#teacher-attendance-form .student-att-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    background: #fff8e1;
+    padding: 0.7rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+#teacher-attendance-form .student-name {
+    min-width: 120px;
+    font-weight: bold;
+    color: #f57c00;
+}
+#teacher-attendance-form label {
+    font-weight: normal;
+    color: #333;
+    margin-left: 1.2rem;
+}
+body.dark-mode #teacher-attendance-form .student-att-row {
+    background: #23272f;
+    color: #ffb74d;
+}
+body.dark-mode #teacher-attendance-form .student-name {
+    color: #ffb74d;
+}
+
+/* تنسيقات مربعات المعلم */
+.teacher-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.teacher-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 120px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    font-size: 1.3rem;
+    color: #f57c00;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+    text-align: center;
+}
+.teacher-card:hover {
+    background: #f57c00;
+    color: #fff;
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(245,124,0,0.15);
+}
+body.dark-mode .teacher-card {
+    background: #23272f;
+    color: #ffb74d;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+body.dark-mode .teacher-card:hover {
+    background: #ffb74d;
+    color: #23272f;
+}
+
+/* تنسيقات شريط التنقل */
+.nav-cards {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0 1.5rem 0;
+}
+.nav-card {
+    display: inline-block;
+    background: #fff;
+    color: #f57c00;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    padding: 0.6rem 1.4rem;
+    text-decoration: none;
+    font-size: 1.08rem;
+    transition: background 0.18s, color 0.18s, transform 0.13s;
+    border: none;
+    cursor: pointer;
+}
+.nav-card:hover {
+    background: #f57c00;
+    color: #fff;
+    transform: translateY(-3px) scale(1.04);
+}
+body.dark-mode .nav-card {
+    background: #23272f;
+    color: #ffb74d;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+body.dark-mode .nav-card:hover {
+    background: #ffb74d;
+    color: #23272f;
+}
+
+/* تنسيقات صفحة إدارة الدرجات */
+.grades-container {
+    background: rgba(255,255,255,0.35);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    border-radius: 24px;
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 600px;
+    margin: 3rem auto 0 auto;
+    text-align: center;
+}
+.grades-container h2 {
+    color: #f57c00;
+    margin-bottom: 1.2rem;
+}
+#grades-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+#grades-form label {
+    text-align: right;
+    color: #333;
+    font-weight: bold;
+}
+#grades-form input,
+#grades-form select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-top: 0.3rem;
+}
+#grades-form button[type="submit"] {
+    background: #f57c00;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.7rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#grades-form button[type="submit"]:hover {
+    background: #ff9800;
+}
+#grades-list {
+    margin-top: 2rem;
+    text-align: right;
+}
+#grades-list h3 {
+    color: #f57c00;
+    margin-bottom: 1rem;
+}
+#grades-list table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    overflow: hidden;
+    margin: 0 auto;
+}
+#grades-list th, #grades-list td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    font-size: 1.1rem;
+}
+#grades-list th {
+    background: #ffe0b2;
+    color: #f57c00;
+    font-weight: bold;
+    font-size: 1.15rem;
+}
+#grades-list tr:last-child td {
+    border-bottom: none;
+}
+#grades-list .delete-btn {
+    background: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#grades-list .delete-btn:hover {
+    background: #b71c1c;
+}
+body.dark-mode #grades-list table {
+    background: #23272f;
+    color: #ffb74d;
+}
+body.dark-mode #grades-list th {
+    background: #23272f;
+    color: #ffb74d;
+}
+body.dark-mode #grades-list td {
+    color: #ffb74d;
+}
+body.dark-mode #grades-list .delete-btn {
+    background: #b71c1c;
+    color: #fff;
+}
+body.dark-mode #grades-list .delete-btn:hover {
+    background: #d32f2f;
+}
+
+/* تنسيقات مربعات الطالب */
+.student-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 3rem 0 2rem 0;
+}
+.student-card {
+    background: #fff;
+    color: #f57c00;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    padding: 2.2rem 2.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+    min-width: 220px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+.student-card:hover {
+    background: #f57c00;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(245,124,0,0.13);
+}
+body.dark-mode .student-card {
+    background: #23272f;
+    color: #ffb74d;
+}
+body.dark-mode .student-card:hover {
+    background: #ffb74d;
+    color: #23272f;
+}
+
+/* ================== Report Card Styles ================== */
+.report-container {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    max-width: 900px;
+    margin: 2.5rem auto;
+    padding: 2.5rem 2rem 2rem 2rem;
+}
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.2rem;
+}
+.report-header img { height: 60px; }
+.report-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #1565c0;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-family: 'Cairo', Arial, sans-serif;
+}
+.report-table, .report-table th, .report-table td {
+    border: 1px solid #888;
+    border-collapse: collapse;
+}
+.report-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+}
+.report-table th {
+    background: #1565c0;
+    color: #fff;
+    font-size: 1rem;
+}
+.report-table td, .report-table th {
+    padding: 0.5rem 0.7rem;
+    text-align: center;
+}
+.report-summary, .report-scale, .report-footer {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.report-scale, .report-footer { font-size: 0.95rem; }
+.report-footer-box {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    min-width: 180px;
+    text-align: center;
+}
+.print-btn {
+    background: #f57c00;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 0.7rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 2rem auto 0 auto;
+    display: block;
+    cursor: pointer;
+}
+@media print {
+    .print-btn, .select-student-row { display: none !important; }
+    body { background: #fff !important; }
+    .report-container { box-shadow: none !important; margin: 0 !important; }
+    .report-footer-box img[alt="stamp"] { display: inline !important; }
+}
+/* ================== End Report Card Styles ================== */

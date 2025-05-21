@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الطلاب | النظام المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .students-admin-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            max-width: 900px;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+        }
+        .students-admin-card h2 {
+            color: #f57c00;
+            margin-bottom: 1.2rem;
+        }
+        .students-admin-card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.2rem;
+        }
+        .students-admin-card th, .students-admin-card td {
+            border: 1px solid #eee;
+            padding: 0.5rem 0.7rem;
+            text-align: center;
+        }
+        .students-admin-card th {
+            background: #f6d365;
+            color: #333;
+        }
+        .students-admin-card button {
+            background: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0.4rem 1.2rem;
+        }
+        .students-admin-card .add-btn {
+            background: #43a047;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="students-admin-card">
+        <h2>إدارة الطلاب</h2>
+        <button class="add-btn" onclick="showAddStudent()">إضافة طالب</button>
+        <input class="table-search" id="student-search" placeholder="بحث عن طالب..." oninput="filterStudents()">
+        <table id="students-admin-table">
+            <thead>
+                <tr><th>الاسم الكامل</th><th>الصف</th><th>عدد الغيابات</th><th>إجراءات</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="students_admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحضور والغياب | النظام المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="attendance-container">
+        <h2>تسجيل الحضور والغياب</h2>
+        <form id="attendance-form">
+            <label>الصف:
+                <select id="attendance-class-filter">
+                    <option value="">كل الصفوف</option>
+                </select>
+            </label>
+            <label>التاريخ:
+                <input type="date" id="attendance-date" required>
+            </label>
+            <div style="margin-bottom:10px">
+                <input type="text" id="student-search-input" placeholder="ابحث عن اسم الطالب..." style="width:100%">
+            </div>
+            <div id="students-attendance-list">
+                <!-- سيتم توليد أسماء الطلاب وخيارات الحضور/الغياب هنا -->
+            </div>
+            <button type="submit">تسجيل</button>
+        </form>
+        <div id="attendance-list">
+            <h3>سجل الحضور والغياب</h3>
+            <input type="text" id="attendance-record-search" placeholder="ابحث في السجل باسم الطالب..." style="margin-bottom:10px;width:100%">
+            <table>
+                <thead>
+                    <tr>
+                        <th>اسم الطالب</th>
+                        <th>التاريخ</th>
+                        <th>الحالة</th>
+                        <th>حذف</th>
+                    </tr>
+                </thead>
+                <tbody id="attendance-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="attendance.js"></script>
+</body>
+</html>

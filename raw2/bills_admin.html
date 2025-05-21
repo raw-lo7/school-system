@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفواتير والدفع | النظام المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .bills-admin-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            max-width: 900px;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+        }
+        .bills-admin-card h2 {
+            color: #f57c00;
+            margin-bottom: 1.2rem;
+        }
+        .bills-admin-card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.2rem;
+        }
+        .bills-admin-card th, .bills-admin-card td {
+            border: 1px solid #eee;
+            padding: 0.5rem 0.7rem;
+            text-align: center;
+        }
+        .bills-admin-card th {
+            background: #f6d365;
+            color: #333;
+        }
+        .bills-admin-card button {
+            background: #43a047;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0.4rem 1.2rem;
+        }
+        .bills-admin-card .add-btn {
+            background: #f57c00;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="bills-admin-card">
+        <h2>الفواتير والدفع</h2>
+        <button class="add-btn" onclick="showAddBill()">إضافة فاتورة</button>
+        <input class="table-search" id="bill-search" placeholder="بحث عن طالب..." oninput="filterBills()">
+        <table id="bills-admin-table">
+            <thead>
+                <tr><th>اسم الطالب</th><th>المبلغ</th><th>الحالة</th><th>إجراءات</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="bills_admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | النظام المدرسي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2 id="login-title">تسجيل الدخول</h2>
+        <form id="login-form">
+            <label for="username" id="label-username">اسم المستخدم</label>
+            <input type="text" id="username" required>
+            <label for="password" id="label-password">كلمة المرور</label>
+            <input type="password" id="password" required>
+            <label for="role" id="label-role">الدور</label>
+            <select id="role">
+                <option value="admin">إدارة</option>
+                <option value="teacher">مدرس</option>
+                <option value="student">طالب</option>
+            </select>
+            <button type="submit" id="login-btn">دخول</button>
+        </form>
+        <div class="lang-switch">
+            <button id="ar-btn">العربية</button>
+            <button id="en-btn">English</button>
+        </div>
+        <div id="login-error" class="error"></div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
